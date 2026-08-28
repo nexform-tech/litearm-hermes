@@ -1,0 +1,52 @@
+name: litearm-hermes
+version: 0.1.0
+description: LiteArm 机械臂控制 — 通过 litearm-python SDK 操作机械臂运动、状态读取、末端设备、遥操等
+author: luochun
+provides_tools:
+  # 连接管理
+  - arm_connect
+  - arm_disconnect
+  # 状态读取
+  - arm_get_state
+  - arm_get_tcp_pose
+  - arm_get_system_stats
+  # 运动控制
+  - arm_movej
+  - arm_movel
+  - arm_movec
+  - arm_movep
+  - arm_home
+  - arm_hold
+  - arm_zero_gravity
+  # 轨迹回放
+  - arm_replay_joint_path
+  - arm_replay_trajectory
+  - arm_record_trajectory
+  - arm_list_trajectories
+  - arm_play_trajectory
+  # 安全
+  - arm_emergency_stop
+  - arm_clear_stop
+  - arm_enable
+  - arm_disable
+  # 外设
+  - arm_device_action
+  - arm_device_get_state
+  # 遥操
+  - arm_enter_teleop
+  - arm_exit_teleop
+  - arm_get_teleop_status
+  # 计算
+  - arm_fk
+  - arm_ik
+  # 参数
+  - arm_set_gains
+  - arm_set_payload
+  - arm_clear_faults
+  - arm_get_joint_limits
+  - arm_set_joint_limits
+  - arm_set_end_effector
+requires_env:
+  - name: LITEARM_ENDPOINT
+    description: "LiteArm server endpoint (e.g. tcp/192.168.31.237:7447)"
+    prompt: "Enter the LiteArm server endpoint"

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litearm-hermes"
+version = "0.1.0"
+description = "Hermes Agent Plugin for LiteArm robot arm control via litearm-python SDK"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "LicenseRef-Proprietary" }
+authors = [{ name = "luochun" }]
+keywords = ["robotics", "robot-arm", "litearm", "hermes-agent", "hermes-plugin"]
+dependencies = [
+    "litearm-python",
+]
+
+[project.entry-points."hermes_agent.plugins"]
+litearm-hermes = "litearm_hermes:register"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["litearm_hermes*"]
